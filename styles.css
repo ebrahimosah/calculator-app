@@ -1,0 +1,250 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    /* theme 1  bg*/
+    --bg-main:hsl(222, 26%, 31%);
+    --bg-toggle:hsl(223, 31%, 20%);
+    --bg-screen:hsl(224, 36%, 15%);
+    /* keys */
+    --key-bg:hsl(225, 21%, 49%);
+    --key-shadow:hsl(224, 28%, 35%);
+
+    --key-red:hsl(6, 63%, 50%);
+    --key-red-shadow:hsl(6, 70%, 34%);
+
+    --key-orange:hsl(30, 25%, 89%);
+    --key-oragne-shadow:hsl(28, 16%, 65%);
+
+    --text-color:hsl(221, 14%, 31%);
+    --text-color-2:hsl(0, 0%, 100%);
+    --text-color-extra:hsl(0, 0%, 100%);
+
+
+    --xs-spacer:5px;
+    --sm-spacer:10px;
+    --md-spacer:20px;
+    --lg-spacer:40px;
+    --xxl-spacer:60px;
+
+    --xs-br:3px;
+    --sm-br:5px;
+    --md-br:10px;
+
+    --fw-sm:400;
+    --fw-md:700;
+    --fw-lg:900;
+
+}
+
+.flow > * + *{
+    margin-bottom: var(--sm-spacer);
+}
+
+main{
+    width:100vw;
+    height: 100vh;
+    background: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    min-width:350px;
+    height: 70vh;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap:11px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    height:10%;
+}
+.title span{
+    color:var(--text-color-extra);
+    font-weight: var(--fw-md);
+}
+
+.theme{
+    display: flex;
+    align-items: center;
+    color:var(--text-color-extra)!important;
+    gap:var(--md-spacer);
+}
+form{
+    display:flex;
+    position: relative;
+    gap:5px;
+    align-items: center;
+    background: var(--bg-screen);
+    padding:2px 4px;
+    border-radius: 8px;
+}
+
+input[type="radio"]{
+    appearance: none;
+    width:.7rem;
+    height:.7rem;
+    border-radius: 50%;
+    /* outline:2px solid var(--radio, currentColor); */
+    border: none;
+
+}
+input[type="radio"]:checked{
+    background: var(--radio); 
+}
+#red{
+    --radio:var(--key-red);
+}
+#orange{
+    --radio: orange;
+}
+#purple{
+    --radio:purple;
+}
+
+
+#red::before{
+    content: '1';
+    position:absolute;
+    top:-20px;
+    left:0;
+    width:20px;
+    height:20px;
+    text-align: center;
+    color:var(--text-color-extra);
+    font-weight: 700;
+    background: transparent;
+}
+#orange::before{
+    content: '2';
+    position:absolute;
+    top:-20px;
+    left:17px;
+    width:20px;
+    height:20px;
+    text-align: center;
+    color:var(--text-color-extra);
+    font-weight: 700;
+    background: transparent;
+}
+#purple::before{
+    content: '3';
+    position:absolute;
+    top:-20px;
+    left:34px;
+    width:20px;
+    height:20px;
+    text-align: center;
+    color:var(--text-color-extra);
+    font-weight: 700;
+    background: transparent;
+}
+#orange,#purple{
+    /* visibility: hidden; */
+}
+
+.screen{
+    color:var(--text-color-2);
+    font-weight: var(--lg-spacer);
+    background: var(--bg-screen);
+    height: 20%;
+    border-radius: var(--sm-br);
+}
+
+.keypad{
+    background: var(--bg-toggle);
+    height:65%;
+    border-radius: var(--sm-br);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+    padding:var(--md-spacer);
+    /* justify-items: center; */
+}
+
+.keypad div{
+    /* width:50px; */
+    height:40px;
+    background: transparent;
+}
+.keypad div button{
+    width:100%;
+    height:100%;
+    background: var(--key-orange);
+    border:none;
+    border-radius: var(--sm-br);
+    font-size: 1.2rem;
+    font-weight: var(--fw-md);
+    color:var(--text-color);
+    cursor: pointer;
+}
+.reset{
+    grid-column: span 2;
+    width:100%;
+}
+.reset button,.del button{
+    color:var(--text-color-2)!important;
+    background: var(--key-bg)!important;
+    text-transform: uppercase;
+}
+.equals{
+    grid-column: span 2;
+    width: 100%;
+}
+.equals button{
+    background: var(--key-red)!important;
+    color:var(--text-color-2);
+}
+
+:root:has(#orange:checked){
+    --bg-main:hsl(0, 0%, 90%);
+    --bg-toggle: hsl(0, 5%, 81%);
+    --bg-screen:hsl(0, 0%, 93%);
+    /* keys */
+    --key-bg:hsl(185, 42%, 37%);
+    --key-shadow:hsl(185, 58%, 25%);
+
+    --key-red:hsl(25, 98%, 40%);
+    --key-red-shadow:hsl(25, 99%, 27%);
+
+    --key-orange:hsl(45, 7%, 89%);
+    --key-oragne-shadow:hsl(35, 11%, 61%);
+
+    --text-color:hsl(60, 10%, 19%);
+    --text-color-2:hsl(0, 0%, 100%); 
+    --text-color-extra:hsl(60, 10%, 19%);
+}
+
+
+:root:has(#purple:checked){
+    --bg-main:hsl(268, 75%, 9%);
+    --bg-toggle: hsl(268, 71%, 12%);
+    --bg-screen:hsl(268, 71%, 12%);
+    /* keys */
+    --key-bg:hsl(281, 89%, 26%);
+    --key-shadow:hsl(285, 91%, 52%);
+
+    --key-red:hsl(176, 100%, 44%);
+    --key-red-shadow:hsl(177, 92%, 70%);
+
+    --key-orange:hsl(268, 47%, 21%);
+    --key-oragne-shadow: hsl(290, 70%, 36%);
+
+    --text-color:hsl(52, 100%, 62%);
+    --text-color-2:hsl(0, 0%, 100%); 
+    --text-color-extra:hsl(52, 100%, 62%);
+}
