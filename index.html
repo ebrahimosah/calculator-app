@@ -8,6 +8,7 @@
   
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.0/math.js"></script>
   <script defer src="./index.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
@@ -21,7 +22,7 @@
           <form>
             <input type="radio" name="theme" id="red" checked>
             <input type="radio" name="theme" id="orange">
-            <input type="radio" name="theme" id="purple">
+            <!-- <input type="radio" name="theme" id="purple"> -->
           </form>
         </div>
       </div>
@@ -29,26 +30,26 @@
 
       </div>
       <div class="keypad">
-        <div> <button> 7 </button></div>
-        <div> <button> 8 </button></div>
-        <div> <button> 9 </button></div>
+        <div> <button onclick="addNumber('7')"> 7 </button></div>
+        <div> <button onclick="addNumber('8')"> 8 </button></div>
+        <div> <button onclick="addNumber('9')"> 9 </button></div>
         <div class="del"> <button> del </button></div>
-        <div> <button> 4 </button></div>
-        <div> <button> 5 </button></div>
-        <div> <button> 6 </button></div>
-        <div> <button> + </button></div>
-        <div> <button> 1 </button></div>
-        <div> <button> 2 </button></div>
-        <div> <button> 3 </button></div>
-        <div> <button> - </button></div>
-        <div> <button> . </button></div>
-        <div> <button> 0 </button></div>
-        <div> <button> / </button></div>
-        <div> <button> x </button></div>
+        <div> <button onclick="addNumber('4')"> 4 </button></div>
+        <div> <button onclick="addNumber('5')"> 5 </button></div>
+        <div> <button onclick="addNumber('6')"> 6 </button></div>
+        <div> <button onclick="addSymbol('+')"> + </button></div>
+        <div> <button onclick="addNumber('1')"> 1 </button></div>
+        <div> <button onclick="addNumber('2')"> 2 </button></div>
+        <div> <button onclick="addNumber('3')"> 3 </button></div>
+        <div> <button onclick="addSymbol('-')"> - </button></div>
+        <div> <button onclick="addNumber('.')"> . </button></div>
+        <div> <button onclick="addNumber('0')"> 0 </button></div>
+        <div> <button onclick="addSymbol('/')"> / </button></div>
+        <div> <button onclick="addSymbol('*')"> x </button></div>
         <div class="reset">
-          <button>reset</button>
+          <button onclick="clearResult()">reset</button>
         </div>
-        <div class="equals"><button>=</button></div>
+        <div class="equals"><button onclick="calculate()">=</button></div>
       </div>
     </section>
   </main>

@@ -23,7 +23,8 @@ body{
     --key-red:hsl(6, 63%, 50%);
     --key-red-shadow:hsl(6, 70%, 34%);
 
-    --key-orange:hsl(30, 25%, 89%);
+    --key-orange:hsl(30, 21%, 89%);
+    --key-orange-hover:hsl(30, 25%, 97%);
     --key-oragne-shadow:hsl(28, 16%, 65%);
 
     --text-color:hsl(221, 14%, 31%);
@@ -47,6 +48,28 @@ body{
 
 }
 
+@media (prefers-color-scheme:dark){
+    :root{
+        --bg-main:hsl(268, 75%, 9%);
+        --bg-toggle: hsl(268, 71%, 12%);
+        --bg-screen:hsl(268, 71%, 12%);
+        /* keys */
+        --key-bg:hsl(281, 89%, 26%);
+        --key-shadow:hsl(285, 91%, 52%);
+    
+        --key-red:hsl(176, 100%, 44%);
+        --key-red-shadow:hsl(177, 92%, 70%);
+    
+        --key-orange:hsl(268, 47%, 21%);
+        --key-orange-hover:hsl(290, 70%, 40%);
+        --key-oragne-shadow: hsl(290, 70%, 36%);
+    
+        --text-color:hsl(52, 100%, 62%);
+        --text-color-2:hsl(0, 0%, 100%); 
+        --text-color-extra:hsl(52, 100%, 62%);
+    }
+}
+
 .flow > * + *{
     margin-bottom: var(--sm-spacer);
 }
@@ -68,6 +91,11 @@ section{
     flex-direction: column;
     gap:11px;
 }
+@media screen and (max-width:390px) {
+    section{
+        min-width: 280px;
+    }
+}
 .title{
     display: flex;
     justify-content: space-between;
@@ -83,6 +111,15 @@ section{
     align-items: center;
     color:var(--text-color-extra)!important;
     gap:var(--md-spacer);
+}
+.screen{
+    color: var(--text-color-extra)!important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: var(--fw-md);
+    padding-inline: var(--sm-spacer);
 }
 form{
     display:flex;
@@ -192,6 +229,9 @@ input[type="radio"]:checked{
     color:var(--text-color);
     cursor: pointer;
 }
+.keypad div button:hover{
+    background: var(--key-orange-hover);
+}
 .reset{
     grid-column: span 2;
     width:100%;
@@ -222,6 +262,7 @@ input[type="radio"]:checked{
     --key-red-shadow:hsl(25, 99%, 27%);
 
     --key-orange:hsl(45, 7%, 89%);
+    --key-orange-hover:hsl(45, 7%, 97%);
     --key-oragne-shadow:hsl(35, 11%, 61%);
 
     --text-color:hsl(60, 10%, 19%);
@@ -230,21 +271,22 @@ input[type="radio"]:checked{
 }
 
 
-:root:has(#purple:checked){
+/* :root:has(#purple:checked){
     --bg-main:hsl(268, 75%, 9%);
     --bg-toggle: hsl(268, 71%, 12%);
     --bg-screen:hsl(268, 71%, 12%);
     /* keys */
-    --key-bg:hsl(281, 89%, 26%);
+    /* --key-bg:hsl(281, 89%, 26%);
     --key-shadow:hsl(285, 91%, 52%);
 
     --key-red:hsl(176, 100%, 44%);
     --key-red-shadow:hsl(177, 92%, 70%);
 
     --key-orange:hsl(268, 47%, 21%);
+    --key-orange-hover:hsl(290, 70%, 40%);
     --key-oragne-shadow: hsl(290, 70%, 36%);
 
     --text-color:hsl(52, 100%, 62%);
     --text-color-2:hsl(0, 0%, 100%); 
-    --text-color-extra:hsl(52, 100%, 62%);
-}
+    --text-color-extra:hsl(52, 100%, 62%); */
+/* } */ 
